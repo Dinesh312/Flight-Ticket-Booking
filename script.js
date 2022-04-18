@@ -26,6 +26,7 @@ var logFlag = 'Login';
 
 // Travel details schema and class 
 const travelSchema = {
+    username: String,
     tripPreference: String,
     from: String,
     to: String,
@@ -55,20 +56,33 @@ app.get('/login', function(req, res){
 });
 
 app.get('/bookings', function(req, res){
-    User.findOne({name: userName}, function(err, foundList){
-        if(foundList == null){
-            console.log('bruh');
-        }
-        else{
-            const userTravels = foundList.travelDetails;
-            res.render('bookings', {userName: userName, userTravels: userTravels, logFlag: logFlag}); 
-        }
-    })
-    
+
+    if(userName == 'admin'){
+        User.find({}, function(err, foundList){
+            var allUsersTravels = [];
+            console.log(foundList);
+            foundList.forEach(userSlot => {
+                allUsersTravels.push(userSlot.travelDetails[0]); 
+            })
+            
+            res.render('bookings', {userName: userName, userTravels: allUsersTravels, logFlag: logFlag});
+        })
+    }else{
+        User.findOne({name: userName}, function(err, foundList){
+            if(foundList == null){
+                console.log('bruh');
+            }
+            else{
+                const userTravels = foundList.travelDetails;
+                res.render('bookings', {userName: userName, userTravels: userTravels, logFlag: logFlag}); 
+            }
+        })
+    }    
 })
 
 app.post('/', function(req, res){
     const travel = new Travel({
+        username: req.body.userName.trim(),
         tripPreference: req.body.tripPreference,
         from: req.body.from,
         to: req.body.to,

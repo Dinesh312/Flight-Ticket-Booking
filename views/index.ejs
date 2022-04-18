@@ -26,9 +26,9 @@
                             </div>
 
                             <label for="">Flying From</label>
-                            <select class="form-select form-control aria-label="flyingFromList" required>
-                                <option>Choose your boarding airport or city</option>
-                                
+                            <select class="form-select form-control" name="from" aria-label="flyingFromList" required>
+                                <option value="">Choose your boarding airport or city</option>
+
                                 <% citiesList.forEach(city => { %> 
                                     <option value=" <%= city %> "> <%= city %>  </option>
                                 <% }) %> 
@@ -36,7 +36,14 @@
                             </select>
 
                             <label for="">Flying To</label>
-                            <input type="text" class="form-control" name="to" placeholder="City or Airport" autocomplete="off" required>
+                            <select class="form-select form-control" name="to" aria-label="flyingToList" required>
+                                <option value="">Choose your landing airport or city</option>
+
+                                <% citiesList.forEach(city => { %> 
+                                    <option value=" <%= city %> "> <%= city %>  </option>
+                                <% }) %> 
+
+                            </select>
 
                             <div class="input-grp">
                                 <label for="">Departing on</label>
