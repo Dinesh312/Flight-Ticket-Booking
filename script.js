@@ -1,13 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const dom = new jsdom.JSDOM("")
-
-// const popup = require('popups');
+const citiesJson = require('./cities.json');
 
 const mongoose = require('mongoose');
 const ejs = require('ejs');
+const req = require('express/lib/request');
 
 const app = express();
 
