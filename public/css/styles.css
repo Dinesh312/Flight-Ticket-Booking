@@ -1,0 +1,130 @@
+#title {
+    background-color: hsl(184, 100%, 92%);
+}
+
+.bookings-title {
+    background-color: hsl(184, 100%, 92%);
+}
+
+body {
+    font-family: "Montserrat-Black" sans-serif;
+}
+
+h1 {
+    font-family: "Montserrat-Black" sans-serif;
+    font-weight: bold;
+    font-size: 7rem;
+    line-height: 1.5;
+}
+
+.container-fluid {
+    padding: 3% 8%;
+    background-color: hsl(184, 100%, 92%);
+}
+
+.table-container {
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+}
+
+.navbar {
+    margin: 0 0 20px 0;
+}
+
+.navbar-brand {
+    margin-left: 10px;
+}
+
+.booking-form-box {
+    max-width: 350px;
+    border: 2px solid #ced4da;
+    margin: 10% auto 10%;
+}
+
+.show-btn {
+    margin: 10px auto 0 20px;
+}
+
+.booking-form{
+    padding: 0 20px 20px;
+}
+
+.booking-form label{
+    margin: 10px 0 5px 0;
+    font-size: 12px;
+    color: rgb(103, 103, 103);
+}
+
+input::placeholder {
+    color: rgb(103, 103, 103) !important;
+}
+
+.input-grp {
+    width: 150px;
+    display: inline-block;
+}
+
+.form-control {
+    font-size: 12px !important;
+    border-radius: 0 !important;
+    color: rgb(103, 103, 103) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.select-date::-webkit-inner-spin-button,
+.select-date::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.select-date::-webkit-calender-picker-indicator {
+    background: transparent !important;
+}
+
+.custom-select {
+    color: grey !important;
+    font-size: 15px !important;
+    border: 1px solid !important;
+    box-shadow: 0 !important;
+    background: transparent !important;
+    width: 100%;
+}
+
+.custom-select option {
+    color: #333;
+}
+
+.form-check-input {
+    margin-top: 10px;
+}
+
+.flight {
+    width: 100%;
+    padding: 9px 0;
+    font-size: 12px;
+    border: 1px solid #ced4da !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+table {
+    text-align: center;
+}
+
+.footer {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: hsl(185, 100%, 85%);
+}
+
+.footer p {
+	margin-top: 25px;
+	font-size: 12px;
+    color: rgb(132, 132, 132);
+}
+
