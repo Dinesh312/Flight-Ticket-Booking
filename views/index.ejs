@@ -2,7 +2,7 @@
 
         <div class="row">
             <div class="col-lg-6 home-text">
-                <h1>Fly Anywhere!</h1>
+                <h1>Fly Anywhere!</h1>> 
             </div>
 
             <div class="col-lg-6">
@@ -45,14 +45,17 @@
 
                             </select>
 
+                            <% let today = new Date().toISOString().slice(0, 10) %> 
+                            <% console.log(typeof today) %> 
+
                             <div class="input-grp">
                                 <label for="">Departing on</label>
-                                <input type="date" name="departingDate" class="form-control select-date" required>
+                                <input type="date" min="<%=today%>" name="departingDate" class="form-control select-date" required>
                             </div>
 
                             <div class="input-grp">
                                 <label for="">Returning on</label>
-                                <input type="date" name="returningDate" class="form-control select-date" required>
+                                <input type="date" min="<%=today%>" name="returningDate" class="form-control select-date" required>
                             </div>
 
                             <div class="input-grp">

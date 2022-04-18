@@ -2,6 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const citiesJson = require('./cities.json');
 
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+
+// Getting cities list from JSON 
 var citiesList = [];
 citiesJson.forEach(airport => {
     citiesList.push(airport.city_name); 
@@ -47,7 +51,7 @@ const userSchema = {
 const User = mongoose.model('User', userSchema);
 
 app.get('/', function(req, res) {
-    
+
     res.render("index", {userName: userName, logFlag: logFlag, citiesList: citiesList});
 });
 
@@ -60,7 +64,7 @@ app.get('/bookings', function(req, res){
     if(userName == 'admin'){
         User.find({}, function(err, foundList){
             var allUsersTravels = [];
-            console.log(foundList);
+            
             foundList.forEach(userSlot => {
                 allUsersTravels.push(userSlot.travelDetails[0]); 
             })
