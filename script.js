@@ -2,6 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const citiesJson = require('./cities.json');
 
+var citiesList = [];
+citiesJson.forEach(airport => {
+    citiesList.push(airport.city_name); 
+});
+
 const mongoose = require('mongoose');
 const ejs = require('ejs');
 const req = require('express/lib/request');
@@ -42,7 +47,7 @@ const User = mongoose.model('User', userSchema);
 
 app.get('/', function(req, res) {
     
-    res.render("index", {userName: userName, logFlag: logFlag});
+    res.render("index", {userName: userName, logFlag: logFlag, citiesList: citiesList});
 });
 
 app.get('/login', function(req, res){
