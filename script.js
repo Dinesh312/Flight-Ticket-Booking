@@ -5,6 +5,25 @@ const citiesJson = require('./cities.json');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
+// Reading flights csv data 
+var fs = require('fs');
+var csv = require('csv');
+
+var parse = require('csv').parse;
+
+var flightDetails = [];
+
+const parser = parse({columns: true}, function (err, records) {
+	if(!err){
+        records.forEach(flight => {
+            flightDetails.push(flight);
+        });
+        // console.log(flightDetails[0]);
+    }
+});
+
+fs.createReadStream(__dirname+'/flights.csv').pipe(parser);
+
 // Getting cities list from JSON 
 var citiesList = [];
 citiesJson.forEach(airport => {
